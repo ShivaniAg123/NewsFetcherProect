@@ -1,0 +1,1 @@
+NewsFetcher is a news aggregation web application that fetches real-time news data from external APIs and displays it in a clean and user-friendly interface. Users can browse news by categories, search for specific topics, and stay updated with the latest headlines. The project demonstrates API integration, asynchronous data fetching, and responsive frontend design.
