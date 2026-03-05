@@ -1,0 +1,312 @@
+
+
+/* ===============================
+   Root Variables
+================================= */
+:root {
+  --bg-color: #f0f2f5;
+  --text-color: #333;
+  --card-bg: #fff;
+  --button-bg: #007bff;
+  --button-hover: #0056b3;
+  --shadow: 0 8px 20px rgba(0,0,0,0.1);
+  --border-radius: 12px;
+}
+
+body.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #f5f5f5;
+  --card-bg: #2a2a2a;
+  --button-bg: #4a90e2;
+  --button-hover: #3572b0;
+}
+
+/* ===============================
+   Global Styles
+================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* ===============================
+   Top Bar
+================================= */
+.top-bar {
+display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto;
+  
+}
+
+.toggle-btn, .auth-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--button-bg);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-left: 10px;
+}
+
+.toggle-btn:hover, .auth-btn:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* ===============================
+   Hero Section
+================================= */
+.hero {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  padding: 50px 20px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.hero-icon {
+  width: 80px;
+  margin-top: 20px;
+  opacity: 0.9;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===============================
+   Forms / Selects
+================================= */
+.form-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.horizontal-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+.horizontal-scroll select {
+  flex: 0 0 auto;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+/* ===============================
+   Fetch Button
+================================= */
+.fetch-btn {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--button-bg);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.fetch-btn:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+.fetch-btn:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* ===============================
+   News Section
+================================= */
+.news-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.news-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.news-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #ccc;
+}
+
+.news-card .content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.news-card p {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.news-card a {
+  text-decoration: none;
+  color: var(--button-bg);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.news-card a:hover {
+  color: var(--button-hover);
+  text-decoration: underline;
+}
+
+/* ===============================
+   Modals (Login/Signup)
+================================= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  margin: auto;
+  padding: 30px 20px;
+  border-radius: var(--border-radius);
+  width: 350px;
+  text-align: center;
+  color: var(--text-color);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.modal-content input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  font-size: 16px;
+}
+
+.modal-content button {
+  width: 95%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--button-bg);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.modal-content button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ===============================
+   Loading Spinner
+================================= */
+#loading {
+  display: none;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid var(--button-bg);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
